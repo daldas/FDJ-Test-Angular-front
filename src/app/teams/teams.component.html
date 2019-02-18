@@ -1,0 +1,14 @@
+<div *ngIf="showMePartially" >
+<div>
+  <span class="help is-info"  *ngIf="isLoading">Loading...</span>
+  <div class="container" *ngIf="!isLoading">
+    <div class="row" >
+      <div  class="col-md-4" *ngFor="let team of teams">
+        <a [attr.href]="'players/' + team.id" ><img class="" [src]="team.logo" width="100px" height="75px"/></a>
+        <br /><br />
+       </div>
+    </div>
+  </div>
+</div>
+</div>
+

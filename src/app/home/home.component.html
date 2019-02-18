@@ -1,0 +1,13 @@
+<form [formGroup]='usersForm'>
+  <mat-form-field>
+    <input matInput placeholder="Search by league" #search  [matAutocomplete]="auto" [formControl]="myControl" (blur)="toggleTeams(search.value)">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let user of filteredOptions | async"
+                  [value]="user.league">
+        <span>{{ user.league }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+<div class="row" style="height: 50px"></div>
+<div><app-teams [showMePartially]="showVar" [ligue]="league"></app-teams></div>

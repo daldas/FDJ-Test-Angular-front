@@ -1,0 +1,43 @@
+<div style="text-align:center">
+  <section class="section">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-menu is-active buttons">
+          <a href="/" class="is-link" onclick="history.back();" >Back</a>
+        </div>
+      </nav>
+      <router-outlet></router-outlet>
+    </div>
+  </section>
+</div>
+<div><span class="help is-info"  *ngIf="isLoading">Loading...</span>
+
+<div class="container" *ngIf="!isLoading">
+
+  <div class="row row-margin-bottom" >
+    <div *ngFor="let player of players">
+    <div class="col-md-5  lib-item"  data-category="view">
+      <div class="lib-panel">
+        <div class="row box-shadow">
+          <div class="col-md-6">
+            <img class="lib-img-show" [src]="player.image" width="auto">
+          </div>
+          <div class="col-md-6">
+            <div class="lib-row lib-header">
+              <h4>{{ player.name }}</h4>
+              <div class="lib-header-seperator"></div>
+            </div>
+            <div class="lib-row lib-desc">
+              <p>{{ player.poste }}</p>
+              <p>{{ player.birthday }}</p>
+              <p>{{ player.price }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    </div>
+  </div>
+</div>
+</div>
